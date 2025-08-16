@@ -30,13 +30,15 @@ if __name__ == "__main__":
             entrada_libro = input("Ingrese tipo de libro: ")
             while (True):
                 if entrada_libro == "1":
+                    
                     print("Registrar Libro Fisico")
                     titulo= input("Ingrese el titulo del libro: ")
                     autor= input("Ingrese el autor del libro: ")
                     codigo= i+1
                     ejemplar=j+1
                     estado="disponible"
-                    libro_fisico = LibroFisico(titulo, autor,codigo, ejemplar, estado)
+                    libro_fisico = LibroFisico(titulo, autor,i+1, ejemplar, estado)
+                    i+=1
                     print("Libro Creado")
                     break
                 elif entrada_libro == "2":
@@ -46,7 +48,8 @@ if __name__ == "__main__":
                     codigo= i+1
                     tamano=input("Ingrese el tamaño del libro en MB: ")                   
                     estado="disponible"
-                    libro_digital = LibroDigital(titulo, autor, codigo, tamano, estado)
+                    libro_digital = LibroDigital(titulo, autor, i+1, tamano, estado)
+                    i+=1
                     print("Libro Digital Creado con exito")
                     break
                 elif entrada_libro == "3":
